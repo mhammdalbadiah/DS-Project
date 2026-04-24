@@ -196,7 +196,7 @@ int main() {
 
     cout << endl;
     cout << "=====================================" << endl;
-    cout << "  Thank you for using the system !!   " << endl;
+    cout << "  Thank you for using our system !!   " << endl;
     cout << "=====================================" << endl;
 
     return 0 ;
