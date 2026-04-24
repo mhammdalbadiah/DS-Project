@@ -1,7 +1,12 @@
 
+// ###########################################
+//      BY MOHAMMED AL-BADIAH 
+// ###########################################
 
-// Fix the performenc by using SWITCH insted of if 
 
+
+// 4/17/2026 Fix the performenc by using SWITCH insted of if 
+// 4/22/2026 , Fix If 
 
 #include "menus.h"
 #include <iostream>
@@ -46,11 +51,9 @@ void passengerMenu(LinkedList<Passenger>& passengerList) {
             case 1: {
 
                 // ==== Display All Passengers ===
-                if (passengerList.isEmpty()) {
-
+                if (passengerList.isEmpty()) 
                     cout << "No Passengers Found §!" << endl;
-
-                } else {
+                    else {
 
                     Node<Passenger>* current = passengerList.getHead() ;
                     int counter = 1 ;
@@ -61,6 +64,7 @@ void passengerMenu(LinkedList<Passenger>& passengerList) {
                         current->data.displayPassenger() ;
                         current = current->next ;
                         counter++ ;
+
                     }
                 }
                 break;
@@ -80,17 +84,17 @@ void passengerMenu(LinkedList<Passenger>& passengerList) {
             case 3: {
 
                 // === Delete Passenger by Position ===
-                if (passengerList.isEmpty()) {
-
+                if (passengerList.isEmpty())
                     cout << "No Passengers to delete !" << endl;
-
-                } else {
+                    else {
 
                     int pos ;
                     cout << "Enter position to delete (1 - " << passengerList.getSize() << ") : " ;
                     cin >> pos ;
                     cin.ignore() ;
                     passengerList.deleteByPosition(pos) ;
+
+
                 }
                 break;
             }
@@ -98,28 +102,25 @@ void passengerMenu(LinkedList<Passenger>& passengerList) {
             case 4: {
 
                 // === Modify Passenger at Position -==
-                if (passengerList.isEmpty()) {
-
+                if (passengerList.isEmpty()) 
                     cout << "No Passengers to modify !" << endl;
-
-                } else {
+                    else {
 
                     int pos ;
                     cout << "Enter position to modify (1 - " << passengerList.getSize() << ") : " ;
                     cin >> pos ;
                     cin.ignore() ;
 
-                    if (pos < 1 || pos > passengerList.getSize()) {
-
+                    if (pos < 1 || pos > passengerList.getSize()) 
                         cout << "Invalid position !" << endl;
-
-                    } else {
+                        else {
 
                         Passenger newP ;
                         newP.setID() ;
                         newP.setName() ;
                         newP.setPassportNo() ;
                         passengerList.modifyAt(pos , newP) ;
+
                     }
                 }
                 break;
@@ -128,11 +129,9 @@ void passengerMenu(LinkedList<Passenger>& passengerList) {
             case 5: {
 
                 // === Find Passenger by ID ====
-                if (passengerList.isEmpty()) {
-
+                if (passengerList.isEmpty()) 
                     cout << "No Passengers to search !" << endl;
-
-                } else {
+                    else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -157,9 +156,9 @@ void passengerMenu(LinkedList<Passenger>& passengerList) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Passenger with ID " << searchID << " not found !!" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -207,11 +206,9 @@ void flightMenu(LinkedList<Flight>& flightList) {
             case 1: {
 
                 // === Display All Flights ===
-                if (flightList.isEmpty()) {
-
+                if (flightList.isEmpty()) 
                     cout << "No Flights Found !" << endl;
-
-                } else {
+                    else {
 
                     Node<Flight>* current = flightList.getHead() ;
                     int counter = 1 ;
@@ -222,6 +219,8 @@ void flightMenu(LinkedList<Flight>& flightList) {
                         current->data.displayFlightProfile() ;
                         current = current->next ;
                         counter++ ;
+
+
                     }
                 }
                 break;
@@ -242,17 +241,16 @@ void flightMenu(LinkedList<Flight>& flightList) {
             case 3: {
 
                 // === Delete Flight by Position ===
-                if (flightList.isEmpty()) {
-
+                if (flightList.isEmpty()) 
                     cout << "No Flights to delete !" << endl;
-
-                } else {
+                    else {
 
                     int pos ;
                     cout << "Enter position to delete (1 - " << flightList.getSize() << "): " ;
                     cin >> pos ;
                     cin.ignore() ;
                     flightList.deleteByPosition(pos) ;
+
                 }
                 break;
             }
@@ -260,22 +258,18 @@ void flightMenu(LinkedList<Flight>& flightList) {
             case 4: {
 
                 // === Modify Flight at Position ===
-                if (flightList.isEmpty()) {
-
+                if (flightList.isEmpty())
                     cout << "No Flights to modify !" << endl;
-
-                } else {
+                 else {
 
                     int pos ;
                     cout << "Enter position to modify (1 - " << flightList.getSize() << "): " ;
                     cin >> pos ;
                     cin.ignore() ;
 
-                    if (pos < 1 || pos > flightList.getSize()) {
-
+                    if (pos < 1 || pos > flightList.getSize()) 
                         cout << "Invalid position !" << endl;
-
-                    } else {
+                    else {
 
                         Flight newF ;
                         newF.setFlightID() ;
@@ -291,15 +285,13 @@ void flightMenu(LinkedList<Flight>& flightList) {
             case 5: {
 
                 // === Find Flight by Flight ID ===
-                if (flightList.isEmpty()) {
-
+                if (flightList.isEmpty()) 
                     cout << "No Flights to search !" << endl;
-
-                } else {
+                else {
 
                     string searchID ;
                     cout << "################################" << endl;
-                    cout << "Enter Flight ID to search: " ;
+                    cout << "Enter Flight ID to search : " ;
                     getline(cin , searchID) ;
 
                     bool found = false ;
@@ -320,9 +312,9 @@ void flightMenu(LinkedList<Flight>& flightList) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Flight with ID " << searchID << " not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -370,11 +362,9 @@ void officeMenu(LinkedList<Booking_Office>& officeList) {
             case 1: {
 
                 // === Display All Offices ===
-                if (officeList.isEmpty()) {
-
+                if (officeList.isEmpty()) 
                     cout << "No Offices Found !" << endl;
-
-                } else {
+                 else {
 
                     Node<Booking_Office>* current = officeList.getHead() ;
                     int counter = 1 ;
@@ -404,11 +394,9 @@ void officeMenu(LinkedList<Booking_Office>& officeList) {
             case 3: {
 
                 // === Delete Office by Position ===
-                if (officeList.isEmpty()) {
-
+                if (officeList.isEmpty()) 
                     cout << "No Offices to delete !!!" << endl;
-
-                } else {
+                 else {
 
                     int pos ;
                     cout << "Enter position to delete (1 - " << officeList.getSize() << ") : " ;
@@ -422,28 +410,26 @@ void officeMenu(LinkedList<Booking_Office>& officeList) {
             case 4: {
 
                 // === Modify Office at Position ===
-                if (officeList.isEmpty()) {
-
+                if (officeList.isEmpty()) 
                     cout << "No Offices to modify !" << endl;
-
-                } else {
+                 else {
 
                     int pos ;
                     cout << "Enter position to modify (1 - " << officeList.getSize() << ")  : " ;
                     cin >> pos ;
                     cin.ignore() ;
 
-                    if (pos < 1 || pos > officeList.getSize()) {
-
+                    if (pos < 1 || pos > officeList.getSize()) 
                         cout << "Invalid position !" << endl;
-
-                    } else {
+                     else {
 
                         Booking_Office newO ;
                         newO.set_Office_ID() ;
                         newO.set_Office_Name() ;
                         newO.set_Office_Location() ;
                         officeList.modifyAt(pos , newO) ;
+
+
                     }
                 }
                 break;
@@ -452,11 +438,9 @@ void officeMenu(LinkedList<Booking_Office>& officeList) {
             case 5: {
 
                 // === Find Office by Office ID ===
-                if (officeList.isEmpty()) {
-
+                if (officeList.isEmpty()) 
                     cout << "No Offices to search !" << endl;
-
-                } else {
+                 else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -481,9 +465,9 @@ void officeMenu(LinkedList<Booking_Office>& officeList) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Office with ID " << searchID << " not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -531,11 +515,9 @@ void ticketMenu(LinkedList<Ticket>& ticketList) {
             case 1: {
 
                 // === Display All Tickets ===
-                if (ticketList.isEmpty()) {
-
+                if (ticketList.isEmpty()) 
                     cout << "No Tickets Found !" << endl;
-
-                } else {
+                 else {
 
                     Node<Ticket>* current = ticketList.getHead() ;
                     int counter = 1 ;
@@ -586,11 +568,9 @@ void ticketMenu(LinkedList<Ticket>& ticketList) {
             case 3: {
 
                 // === Delete Ticket by Position ===
-                if (ticketList.isEmpty()) {
-
+                if (ticketList.isEmpty()) 
                     cout << "No Tickets to delete !" << endl;
-
-                } else {
+                 else {
 
                     int pos ;
                     cout << "Enter position to delete (1 - " << ticketList.getSize() << ")  : " ;
@@ -604,22 +584,18 @@ void ticketMenu(LinkedList<Ticket>& ticketList) {
             case 4: {
 
                 // === Modify Ticket at Position ===
-                if (ticketList.isEmpty()) {
-
+                if (ticketList.isEmpty()) 
                     cout << "No Tickets to modify !" << endl;
-
-                } else {
+                else {
 
                     int pos ;
                     cout << "Enter position to modify (1 - " << ticketList.getSize() << "): " ;
                     cin >> pos ;
                     cin.ignore() ;
 
-                    if (pos < 1 || pos > ticketList.getSize()) {
-
+                    if (pos < 1 || pos > ticketList.getSize()) 
                         cout << "Invalid position !" << endl;
-
-                    } else {
+                     else {
 
                         Ticket newT ;
                         newT.setTicketNo() ;
@@ -655,11 +631,9 @@ void ticketMenu(LinkedList<Ticket>& ticketList) {
             case 5: {
 
                 // === Find Ticket by Ticket Number ===
-                if (ticketList.isEmpty()) {
-
+                if (ticketList.isEmpty()) 
                     cout << "No Tickets to search !" << endl;
-
-                } else {
+                 else {
 
                     string searchNo ;
                     cout << "################################" << endl;
@@ -684,9 +658,9 @@ void ticketMenu(LinkedList<Ticket>& ticketList) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Ticket with Number " << searchNo << " not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -739,11 +713,9 @@ void passengerStackMenu(Stack<Passenger>& pStack) {
             case 1: {
 
                 // === Display All from Top to Bottom ===
-                if (pStack.isEmpty()) {
-
+                if (pStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     Node<Passenger>* current = pStack.getTop() ;
                     int counter = 1 ;
@@ -780,11 +752,9 @@ void passengerStackMenu(Stack<Passenger>& pStack) {
             case 4: {
 
                 // === Peek Top Passenger ===
-                if (pStack.isEmpty()) {
-
+                if (pStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Top of Stack :" << endl;
                     pStack.peek()->data.displayPassenger() ;
@@ -795,11 +765,9 @@ void passengerStackMenu(Stack<Passenger>& pStack) {
             case 5: {
 
                 // === Find Passenger by ID ===
-                if (pStack.isEmpty()) {
-
+                if (pStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -824,9 +792,9 @@ void passengerStackMenu(Stack<Passenger>& pStack) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Passenger not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -873,11 +841,9 @@ void flightStackMenu(Stack<Flight>& fStack) {
 
             case 1: {
 
-                if (fStack.isEmpty()) {
-
+                if (fStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                else {
 
                     Node<Flight>* current = fStack.getTop() ;
                     int counter = 1 ;
@@ -912,11 +878,9 @@ void flightStackMenu(Stack<Flight>& fStack) {
 
             case 4: {
 
-                if (fStack.isEmpty()) {
-
+                if (fStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Top of Stack :" << endl;
                     fStack.peek()->data.displayFlightProfile() ;
@@ -926,11 +890,9 @@ void flightStackMenu(Stack<Flight>& fStack) {
 
             case 5: {
 
-                if (fStack.isEmpty()) {
-
+                if (fStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -955,9 +917,9 @@ void flightStackMenu(Stack<Flight>& fStack) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Flight not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -1004,11 +966,9 @@ void officeStackMenu(Stack<Booking_Office>& oStack) {
 
             case 1: {
 
-                if (oStack.isEmpty()) {
-
+                if (oStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                else {
 
                     Node<Booking_Office>* current = oStack.getTop() ;
                     int counter = 1 ;
@@ -1019,6 +979,7 @@ void officeStackMenu(Stack<Booking_Office>& oStack) {
                         current->data.displayOffice() ;
                         current = current->next ;
                         counter++ ;
+                        // Fix bug in loop body !! 
                     }
                 }
                 break;
@@ -1042,11 +1003,9 @@ void officeStackMenu(Stack<Booking_Office>& oStack) {
 
             case 4: {
 
-                if (oStack.isEmpty()) {
-
+                if (oStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Top of Stack :" << endl;
                     oStack.peek()->data.displayOffice() ;
@@ -1056,11 +1015,9 @@ void officeStackMenu(Stack<Booking_Office>& oStack) {
 
             case 5: {
 
-                if (oStack.isEmpty()) {
-
+                if (oStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -1085,9 +1042,9 @@ void officeStackMenu(Stack<Booking_Office>& oStack) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Office not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -1134,11 +1091,9 @@ void ticketStackMenu(Stack<Ticket>& tStack) {
 
             case 1: {
 
-                if (tStack.isEmpty()) {
-
+                if (tStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     Node<Ticket>* current = tStack.getTop() ;
                     int counter = 1 ;
@@ -1148,7 +1103,9 @@ void ticketStackMenu(Stack<Ticket>& tStack) {
                         cout << "--- #" << counter << " ( from top) ---" << endl;
                         current->data.displayTicket() ;
                         current = current->next ;
+
                         counter++ ;
+
                     }
                 }
                 break;
@@ -1194,11 +1151,9 @@ void ticketStackMenu(Stack<Ticket>& tStack) {
 
             case 4: {
 
-                if (tStack.isEmpty()) {
-
+                if (tStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Top of Stack :" << endl;
                     tStack.peek()->data.displayTicket() ;
@@ -1208,11 +1163,9 @@ void ticketStackMenu(Stack<Ticket>& tStack) {
 
             case 5: {
 
-                if (tStack.isEmpty()) {
-
+                if (tStack.isEmpty()) 
                     cout << "Stack is empty !" << endl;
-
-                } else {
+                 else {
 
                     string searchNo ;
                     cout << "################################" << endl;
@@ -1237,9 +1190,9 @@ void ticketStackMenu(Stack<Ticket>& tStack) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Ticket not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -1263,7 +1216,7 @@ void ticketStackMenu(Stack<Ticket>& tStack) {
 
 
 // ======== Passenger Queue Menu ========
-
+// Argument Fix 
 void passengerQueueMenu(Queue<Passenger>& pQueue) {
 
     int choice ;
@@ -1292,11 +1245,9 @@ void passengerQueueMenu(Queue<Passenger>& pQueue) {
             case 1: {
 
                 // === Display All from Front to Back ===
-                if (pQueue.isEmpty()) {
-
+                if (pQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     Node<Passenger>* current = pQueue.getFront() ;
                     int counter = 1 ;
@@ -1307,6 +1258,7 @@ void passengerQueueMenu(Queue<Passenger>& pQueue) {
                         current->data.displayPassenger() ;
                         current = current->next ;
                         counter++ ;
+
                     }
                 }
                 break;
@@ -1314,7 +1266,7 @@ void passengerQueueMenu(Queue<Passenger>& pQueue) {
 
             case 2: {
 
-                // === Enqueue New Passenger ===
+                // === Enqueue New Passenger ====
                 Passenger p ;
                 p.setID() ;
                 p.setName() ;
@@ -1333,11 +1285,9 @@ void passengerQueueMenu(Queue<Passenger>& pQueue) {
             case 4: {
 
                 // === Peek Front Passenger ===
-                if (pQueue.isEmpty()) {
-
+                if (pQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Front of Queue :" << endl;
                     pQueue.peek()->data.displayPassenger() ;
@@ -1347,12 +1297,10 @@ void passengerQueueMenu(Queue<Passenger>& pQueue) {
 
             case 5: {
 
-                // === Find Passenger by ID ===
-                if (pQueue.isEmpty()) {
-
+                // ===- Find Passenger by ID ===
+                if (pQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -1377,9 +1325,9 @@ void passengerQueueMenu(Queue<Passenger>& pQueue) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Passenger not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -1426,11 +1374,9 @@ void flightQueueMenu(Queue<Flight>& fQueue) {
 
             case 1: {
 
-                if (fQueue.isEmpty()) {
-
+                if (fQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     Node<Flight>* current = fQueue.getFront() ;
                     int counter = 1 ;
@@ -1465,11 +1411,9 @@ void flightQueueMenu(Queue<Flight>& fQueue) {
 
             case 4: {
 
-                if (fQueue.isEmpty()) {
-
+                if (fQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Front of Queue :" << endl;
                     fQueue.peek()->data.displayFlightProfile() ;
@@ -1480,11 +1424,9 @@ void flightQueueMenu(Queue<Flight>& fQueue) {
 
             case 5: {
 
-                if (fQueue.isEmpty()) {
-
+                if (fQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -1509,9 +1451,9 @@ void flightQueueMenu(Queue<Flight>& fQueue) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Flight not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -1558,11 +1500,9 @@ void officeQueueMenu(Queue<Booking_Office>& oQueue) {
 
             case 1: {
 
-                if (oQueue.isEmpty()) {
-
+                if (oQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                else {
 
                     Node<Booking_Office>* current = oQueue.getFront() ;
                     int counter = 1 ;
@@ -1596,11 +1536,9 @@ void officeQueueMenu(Queue<Booking_Office>& oQueue) {
 
             case 4: {
 
-                if (oQueue.isEmpty()) {
-
+                if (oQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                else {
 
                     cout << "Front of Queue :" << endl;
                     oQueue.peek()->data.displayOffice() ;
@@ -1610,11 +1548,8 @@ void officeQueueMenu(Queue<Booking_Office>& oQueue) {
 
             case 5: {
 
-                if (oQueue.isEmpty()) {
-
-                    cout << "Queue is empty !" << endl;
-
-                } else {
+                if (oQueue.isEmpty()) cout << "Queue is empty !" << endl;
+                 else {
 
                     string searchID ;
                     cout << "################################" << endl;
@@ -1639,9 +1574,9 @@ void officeQueueMenu(Queue<Booking_Office>& oQueue) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Office not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
@@ -1688,11 +1623,9 @@ void ticketQueueMenu(Queue<Ticket>& tQueue) {
 
             case 1: {
 
-                if (tQueue.isEmpty()) {
-
+                if (tQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     Node<Ticket>* current = tQueue.getFront() ;
                     int counter = 1 ;
@@ -1747,11 +1680,9 @@ void ticketQueueMenu(Queue<Ticket>& tQueue) {
 
             case 4: {
 
-                if (tQueue.isEmpty()) {
-
+                if (tQueue.isEmpty()) 
                     cout << "Queue is empty !" << endl;
-
-                } else {
+                 else {
 
                     cout << "Front of Queue :" << endl;
                     tQueue.peek()->data.displayTicket() ;
@@ -1761,11 +1692,9 @@ void ticketQueueMenu(Queue<Ticket>& tQueue) {
 
             case 5: {
 
-                if (tQueue.isEmpty()) {
-
+                if (tQueue.isEmpty()) 
                     cout << "Queue is empty!!!" << endl;
-
-                } else {
+                 else {
 
                     string searchNo ;
                     cout << "################################" << endl;
@@ -1790,9 +1719,9 @@ void ticketQueueMenu(Queue<Ticket>& tQueue) {
                         counter++ ;
                     }
 
-                    if (!found) {
+                    if (!found) 
                         cout << "Ticket not found !" << endl;
-                    }
+                    
                 }
                 break;
             }
