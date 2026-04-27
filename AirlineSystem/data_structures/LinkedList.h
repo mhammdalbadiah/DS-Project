@@ -1,3 +1,5 @@
+
+
 //Ahmed farraj Alotaibi
 
 
@@ -14,11 +16,8 @@
         Node* next ;     // Pointer to the next node in the list
 
         // Constructor initialize data and set next to null
-        Node(T d) {
+        Node(T d) : data(d) , next(nullptr){}
 
-            data = d ;
-            next = nullptr ;
-        }
     };
 
 
@@ -36,12 +35,9 @@
     public :
 
         // Constructor start with an empty list
-        LinkedList() {
+        LinkedList(): head(nullptr) , size(0) {}
 
-            head = nullptr ;
-            size = 0 ;
-        }
-
+    
         // Destructor free all nodes from memory when list is destroyed
 
         ~LinkedList() {
@@ -117,7 +113,8 @@
             // Traverse to the node just before the target position
             Node<T>* current = head ;
 
-            for (int i = 1 ; i < pos - 1  ; i++) { current = current->next ; }
+            for (int i = 1 ; i < pos - 1  ; i++) 
+             current = current->next ; 
 
 
             
@@ -145,7 +142,8 @@
 
         Node<T>* current = head ;
 
-        for (int i = 1 ; i < pos ; i++) { current = current->next ; }
+        for (int i = 1 ; i < pos ; i++)
+          current = current->next ; 
 
         return current ;
     }
