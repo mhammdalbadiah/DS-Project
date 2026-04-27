@@ -5,24 +5,7 @@
 
 
 
-/*
-
-    A Queue works on FIFO principle  First In , First Out
-    We use two pointers front and back
-         front : points to the first item next to be removed
-         back  : points to the last item most recently added
-
-      Queue operations supported :
-        Enqueue -> Add item to the back
-        Dequeue -> Remove item from the front
-        Peek    -> View the front item without removing it
-        Display -> Show all items from front to back
-        Find    -> Search for an item by its key
-        isEmpty -> Check if queue is empty
-
-
-
-*/
+ 
 
 
 // ======== Queue Template =====
@@ -43,6 +26,7 @@ public :
         front = nullptr ;
         back  = nullptr ;
         size  = 0 ;
+
     }
 
     // Destructor free all nodes from memory
@@ -54,6 +38,9 @@ public :
             Node<T>* temp = front ;
             front = front->next ;
             delete temp ;
+
+
+            
         }
     }
 
