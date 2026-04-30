@@ -1,12 +1,31 @@
 //Ahmed farraj Alotaibi
 
 
-// Fix UI & UX by Ahmed 
+// Fix UI & UX by Ahmed 23/4 
+
+
+// Add UI Using Python Script by Mohammed
+// 4/30/2026
 
 
 
+/*
+ 
+
+cout << "                   #        #####    #   #    #   #    #####    ####     #        #####     ####    ##### " << endl;
+cout << "                   #          #      ##  #    #  #     #        #   #    #          #      #          #   
+                   #          #      # # #    ###      ####     #   #    #          #       ###       #   
+                   #          #      #  ##    #  #     #        #   #    #          #          #      #   
+                   #####    #####    #   #    #   #    #####    ####     #####    #####    ####       #   
+
+
+
+
+*/
 #include <iostream>
 #include "menus.h"
+ 
+
 
 using namespace std ;
 
@@ -29,6 +48,10 @@ using namespace std ;
 
 int main() {
 
+
+
+  
+
     // ===== Part 1 : Declare the 4 Linked Lists =====
     LinkedList<Passenger>      passengerList ;
     LinkedList<Flight>         flightList    ;
@@ -47,20 +70,38 @@ int main() {
     Queue<Booking_Office> officeQueue    ;
     Queue<Ticket>         ticketQueue    ;
 
+      
+
 
     int mainChoice ;
 
     do {
 
         cout << endl << endl ;
-        cout << "############################################" << endl;
-        cout << "       Airline Management System            " << endl;
-        cout << "############################################" << endl;
+        cout << "==========================================================================================" << endl;
+        cout << endl;
+        cout << "    ###     #####    ####     #        #####    #   #    ##### " << endl;
+        cout << "   #   #      #      #   #    #          #      ##  #    #     " << endl;     
+        cout << "   #####      #      ####     #          #      # # #    ####  " << endl;
+        cout << "   #   #      #      #  #     #          #      #  ##    #     " << endl;
+        cout << "   #   #    #####    #   #    #####    #####    #   #    ##### " << endl;
+        cout << endl;
+        cout << "==========================================================================================" << endl;
+        cout << endl;
+        cout << "                      ####    #   #     ####    #####    #####    #   #               #   " << endl;
+        cout << "                     #         # #     #          #      #        ## ##               #    " << endl;
+        cout << "                      ###       #       ###       #      ####     # # #               #    " << endl;
+        cout << "                         #      #          #      #      #        #   #                    " << endl;
+        cout << "                     ####       #      ####       #      #####    #   #               #    " << endl;
+        cout << endl;
+        cout << "==========================================================================================" << endl;
+        cout << endl;
         cout << "1) Part 1 : Linked Lists                    " << endl;
         cout << "2) Part 2 : Stacks                          " << endl;
         cout << "3) Part 3 : Queues                          " << endl;
         cout << "0) Exit                                     " << endl;
-        cout << "############################################" << endl;
+        cout << endl;
+        cout << "==========================================================================================" << endl;
         cout << "Enter your choice : " ;
         cin >> mainChoice ;
         cin.ignore() ;
@@ -78,9 +119,9 @@ int main() {
                 do {
 
                     cout << endl ;
-                    cout << "========================================" << endl;
-                    cout << "        Part 1 : Linked Lists           " << endl;
-                    cout << "========================================" << endl;
+                    cout << "================================================================" << endl;
+                    cout << "                      Part 1 : Linked List                      " << endl;
+                    cout << "================================================================" << endl;
                     cout << "1) Passengers                           " << endl;
                     cout << "2) Flights                              " << endl;
                     cout << "3) Booking Offices                      " << endl;
