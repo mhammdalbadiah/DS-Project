@@ -8,44 +8,12 @@
 // 4/30/2026
 
 
-
-/*
- 
-
-cout << "                   #        #####    #   #    #   #    #####    ####     #        #####     ####    ##### " << endl;
-cout << "                   #          #      ##  #    #  #     #        #   #    #          #      #          #   
-                   #          #      # # #    ###      ####     #   #    #          #       ###       #   
-                   #          #      #  ##    #  #     #        #   #    #          #          #      #   
-                   #####    #####    #   #    #   #    #####    ####     #####    #####    ####       #   
-
-
-
-
-*/
 #include <iostream>
 #include "menus.h"
- 
-
-
 using namespace std ;
 
 
-// ############################################################################
-//                              MAIN FUNCTION
-// ############################################################################
-
-/*
-    The main function displays a top-level menu with 3 parts :
-        Part 1 -> Linked Lists
-        Part 2 -> Stacks
-        Part 3 -> Queues
-
-    Each part then leads to sub-menus for the 4 data types
-    All data structures are declared here and passed by reference to their menus
-
-
-*/
-
+ 
 int main() {
 
 
